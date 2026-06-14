@@ -53,7 +53,7 @@ const Contact = () => {
         <div className="bg-cardBg border border-white/10 rounded-2xl p-6 space-y-4">
           <div className="border-b border-white/5 pb-3">
             <span className="text-sm font-bold block">
-              Rifqi Muhammad A.{" "}
+              Izairy Fazrul{" "}
               <span className="text-xs bg-white/10 text-gray-400 px-2 py-0.5 rounded ml-2">
                 Pinned
               </span>

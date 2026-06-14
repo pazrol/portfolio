@@ -7,7 +7,7 @@ const About = () => {
         <h2 className="text-sm font-mono uppercase text-gray-400 tracking-widest">
           About Me
         </h2>
-        <h1 className="text-4xl font-bold">Rifqi Muhammad Aliya</h1>
+        <h1 className="text-4xl font-bold">Izairy Fazrul</h1>
         <p className="text-gray-400 leading-relaxed">
           Fresh Graduate dengan passion mendalam di bidang frontend development
           dan UI design. Berfokus pada pembuatan website clean, responsif, dan

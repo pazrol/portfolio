@@ -6,7 +6,7 @@ const Home = () => {
       {/* Left Text details */}
       <div className="space-y-6">
         <p className="text-sm font-mono text-green-400 tracking-widest uppercase">
-          ● Available for work
+          ● Available for collaboration
         </p>
         <h1 className="text-6xl font-extrabold tracking-tight leading-none">
           Frontend <br /> <span className="text-gray-400">Developer</span>
@@ -41,7 +41,7 @@ const Home = () => {
             </span>
           </div>
           <div className="mt-4 text-center">
-            <h3 className="font-bold text-lg tracking-wide">Rifqi Muhammad</h3>
+            <h3 className="font-bold text-lg tracking-wide">Izairy Fazrul</h3>
             <p className="text-xs text-gray-400 font-mono mt-1">
               ID CARD // FRONTEND DEV
             </p>
