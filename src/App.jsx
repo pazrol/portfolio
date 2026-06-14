@@ -28,7 +28,7 @@ function App() {
       {/* Top Navigation Row */}
       <div className="w-full max-w-5xl flex justify-between items-center py-4 border-b border-white/10 mb-12">
         <span className="font-mono text-lg font-bold tracking-wider text-gray-400">
-          rifqi.dev
+          Izairy Fazrul.dev
         </span>
         <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
