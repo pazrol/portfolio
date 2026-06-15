@@ -5,7 +5,7 @@ const Navbar = ({ activeTab, setActiveTab }) => {
   const tabs = ["home", "about", "portfolio", "contact"];
 
   return (
-    <nav className="navbar">
+    <nav className="Navbar">
       {tabs.map((tab) => (
         <button
           key={tab}

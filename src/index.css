@@ -17,6 +17,7 @@ body {
   background-size: 40px 40px;
 }
 
+/* Your existing class, updated with flexbox */
 .Navbar {
   position: relative;
   padding: 15px 20px;
@@ -25,4 +26,31 @@ body {
   backdrop-filter: blur(15px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   border: 0.5px solid #ccc;
+
+  /* ADD THESE TWO LINES to align the buttons horizontally */
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* New classes for the buttons inside the Navbar */
+.nav-button {
+  background: transparent;
+  border: none;
+  color: #4b5563; /* A darker gray since your navbar background is 50% white */
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 5px 10px;
+}
+
+.nav-button:hover {
+  color: #000000; /* Turns black on hover for visibility */
+}
+
+.nav-button.active {
+  color: #000000;
+  border-bottom: 2px solid #000000;
 }
