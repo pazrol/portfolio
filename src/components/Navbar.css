@@ -1,12 +1,14 @@
 /* Your existing class, updated with flexbox */
 .Navbar {
-  position: relative;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 15px 20px;
-  background: rgb(80, 104, 137); /* Updated to match your color scheme */
+  background: #779ecb; /* Updated to match your color scheme */
   border-radius: 60px;
   backdrop-filter: blur(15px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  border: 0.5px solid #ccc;
+  box-shadow: 0 15px 35px rgba(31, 68, 180, 0.5);
 
   /* ADD THESE TWO LINES to align the buttons horizontally */
   display: flex;
