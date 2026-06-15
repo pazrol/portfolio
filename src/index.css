@@ -16,3 +16,13 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+.Navbar {
+  position: relative;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 60px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 0.5px solid #ccc;
+}
