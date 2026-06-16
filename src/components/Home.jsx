@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar.jsx"; // Import the missing Navbar component
-import "./Home.css";
+import "./Home.css"; // Removed the unused Navbar import from here
 
 const Home = () => {
   // State for the 3D tilt effect
@@ -34,8 +33,6 @@ const Home = () => {
 
   return (
     <>
-      {/* Render the Navbar at the top */}
-      <Navbar />
       <div className="home-page-bg">
         {/* Decorative Glow Effects */}
         <div className="glow-top-left" />
@@ -103,11 +100,10 @@ const Home = () => {
 
                 {/* Profile Image Area */}
                 <div className="profile-image-area">
-                  {/* Replace the path below with your actual image file */}
                   <img
                     src="https://via.placeholder.com/300x400/1a1a1a/ffffff?text=Your+Photo+Here"
                     alt="Izairy Fazrul"
-                    className="pazrol.jpeg"
+                    className="./pazrol.jpeg"
                   />
                 </div>
 
