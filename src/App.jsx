@@ -27,9 +27,7 @@ function App() {
     <div className="min-h-screen grid-bg text-white flex flex-col items-center p-6 relative">
       {/* Top Navigation Row */}
       <div className="w-full max-w-5xl flex justify-between items-center py-4 border-b border-white/10 mb-12">
-        <span className="font-mono text-lg font-bold tracking-wider text-gray-400">
-          Izairy Fazrul.dev
-        </span>
+        <span className="font-mono text-lg font-bold tracking-wider text-gray-400"></span>
         <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 

@@ -167,7 +167,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -4.5px;
     border: 5px solid transparent;
@@ -181,4 +181,54 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+.Navbar {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  display: flex;
+  gap: 20px;
+  border-radius: 50px;
+
+  /* --- THE LIQUID GLASS EFFECT --- */
+
+  /* 1. Semi-transparent background (converted your #425871 to RGBA with 45% opacity) */
+  background: rgba(51, 65, 80, 0.45);
+
+  /* 2. Blur AND Saturation boost */
+  backdrop-filter: blur(5px) saturate(200%);
+  -webkit-backdrop-filter: blur(5px) saturate(200%); /* Crucial for Safari/iOS */
+
+  /* 3. Subtle white border to create a "glass edge" reflection */
+  border: 1px solid rgba(255, 255, 255, 0.112);
+
+  /* 4. Softened shadow so it looks like it's floating light, not heavy */
+  box-shadow: 0 8px 32px rgba(72, 77, 96, 0.685);
+}
+
+/* Updated buttons to match the sleek glass vibe */
+.nav-button {
+  background: transparent;
+  border: none; /* Removes default button borders if using <button> tags */
+  border-radius: 30px; /* Pill shape looks better on a rounded navbar */
+  color: #c9d8ea; /* Lighter default text to contrast the glass */
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  transition: all 0.1s ease; /* Smoothed out the transition */
+  padding: 8px 16px; /* Slightly larger clickable area */
+}
+
+/* Glassy hover and active states */
+.nav-button:hover,
+.nav-button.active {
+  color: #ffffff;
+  /* Instead of a solid dark color, use a semi-transparent white highlight */
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px); /* Very subtle lift effect */
 }

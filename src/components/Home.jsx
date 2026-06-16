@@ -1,54 +1,139 @@
-import React from "react";
+import React, { useState } from "react";
+import Navbar from "./Navbar.jsx"; // Import the missing Navbar component
+import "./Home.css";
 
 const Home = () => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
-      {/* Left Text details */}
-      <div className="space-y-6">
-        <p className="text-sm font-mono text-green-400 tracking-widest uppercase">
-          ● Available for collaboration
-        </p>
-        <h1 className="text-6xl font-extrabold tracking-tight leading-none">
-          Frontend <br /> <span className="text-gray-400">Developer</span>
-        </h1>
-        <p className="text-gray-400 text-lg max-w-md">
-          Menciptakan website modern dengan tampilan clean, responsif, dan
-          elegan. Mengubah ide dan desain menjadi pengalaman digital yang
-          menarik.
-        </p>
-        <div className="flex gap-3 pt-2">
-          {["React.js", "Tailwind CSS", "Vite"].map((tech) => (
-            <span
-              key={tech}
-              className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs font-mono text-gray-300"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
+  // State for the 3D tilt effect
+  const [transformStyle, setTransformStyle] = useState("");
 
-      {/* Right "ID Card / Profile Picture" Area */}
-      <div className="flex justify-center md:justify-end">
-        <div className="relative w-72 h-96 bg-cardBg border border-white/10 rounded-2xl overflow-hidden shadow-2xl p-4 flex flex-col justify-between items-center group hover:border-white/30 transition-all">
-          <div className="w-full h-4 bg-white/10 rounded-full mb-4 flex items-center justify-center">
-            <div className="w-12 h-1 bg-black rounded-full" />
-          </div>
-          {/* Placeholder for Profile image */}
-          <div className="w-full flex-grow bg-neutral-800 rounded-lg overflow-hidden flex items-center justify-center relative">
-            <span className="text-sm text-neutral-500 font-mono">
-              [ Foto Profil ]
-            </span>
-          </div>
-          <div className="mt-4 text-center">
-            <h3 className="font-bold text-lg tracking-wide">Izairy Fazrul</h3>
-            <p className="text-xs text-gray-400 font-mono mt-1">
-              ID CARD // FRONTEND DEV
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const box = card.getBoundingClientRect();
+
+    // Calculate cursor position relative to the card
+    const x = e.clientX - box.left;
+    const y = e.clientY - box.top;
+
+    // Calculate rotation based on center (max tilt 15 degrees)
+    const centerX = box.width / 2;
+    const centerY = box.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -15;
+    const rotateY = ((x - centerX) / centerX) * 15;
+
+    setTransformStyle(
+      `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`,
+    );
+  };
+
+  const handleMouseLeave = () => {
+    // Reset to original position when mouse leaves
+    setTransformStyle(
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)",
+    );
+  };
+
+  return (
+    <>
+      {/* Render the Navbar at the top */}
+      <Navbar />
+      <div className="home-page-bg">
+        {/* Decorative Glow Effects */}
+        <div className="glow-top-left" />
+        <div className="glow-bottom-right" />
+
+        <div className="home-container">
+          {/* Left Side Content */}
+          <div className="hero-content">
+            <p className="status-badge">
+              <span className="ping-dot">
+                <span className="ping-animation"></span>
+                <span className="ping-core"></span>
+              </span>
+              Available for opportunities
             </p>
+
+            <h1 className="main-title">Izairy Fazrul</h1>
+
+            <h2 className="sub-title">
+              Currently Pursuing Bachelor In Information Technology (Hons) in
+              Cyber Security
+            </h2>
+
+            <p className="description">
+              Passionated about securing digital landscapes. Exploring
+              vulnerabilities, building secure systems, and turning complex
+              security challenges into robust defense mechanisms.
+            </p>
+
+            {/* Cyber Security Skill Tags */}
+            <div className="tech-stack">
+              {[
+                "Network Security",
+                "Penetration Testing",
+                "Python",
+                "Linux",
+                "React.js",
+              ].map((tech) => (
+                <span key={tech} className="tech-tag">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Side "ID Card / Lanyard" Area */}
+          <div className="lanyard-area">
+            {/* Lanyard Strap */}
+            <div className="lanyard-strap" />
+
+            {/* ID Card Wrapper for 3D Effect */}
+            <div
+              className="lanyard-card-wrapper"
+              style={{ transform: transformStyle }}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              {/* Lanyard Clip */}
+              <div className="lanyard-clip" />
+
+              {/* The Card */}
+              <div className="id-card">
+                {/* Card Header Hole */}
+                <div className="card-slot" />
+
+                {/* Profile Image Area */}
+                <div className="profile-image-area">
+                  {/* Replace the path below with your actual image file */}
+                  <img
+                    src="https://via.placeholder.com/300x400/1a1a1a/ffffff?text=Your+Photo+Here"
+                    alt="Izairy Fazrul"
+                    className="pazrol.jpeg"
+                  />
+                </div>
+
+                {/* Card Details */}
+                <div className="card-details">
+                  <h3 className="card-name">Izairy Fazrul</h3>
+                  <div className="card-divider" />
+                  <p className="card-role">CYBER SECURITY // UPTM</p>
+
+                  <div className="card-footer">
+                    <div className="mini-qr">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <span className="card-id">ID: 2026-CS-IF</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
